@@ -31,6 +31,7 @@ public class ProgramarDesligamento {
             LocalDateTime horaFornecidaHoje = agora.withHour(horaFormatada.getHour()).withMinute(horaFormatada.getMinute());
 
             if (horaFornecidaHoje.isBefore(agora)) {
+                System.out.println("Esse horário já passou! Tente novamente...");
                 programar();
             } else {
                 Duration diferenca = Duration.between(agora, horaFornecidaHoje);
